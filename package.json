@@ -1,0 +1,24 @@
+{
+  "name": "project_js",
+  "version": "1.0.0",
+  "description": "HTML, CSS, Tailwind and JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "start" :"npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estelcm/project_js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estelcm/project_js/issues"
+  },
+  "homepage": "https://github.com/estelcm/project_js#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
