@@ -10,7 +10,7 @@ button.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
-products = [
+const products = [
   {
     productVersion: "iphone 14",
     colorName: "Beach",
@@ -67,59 +67,87 @@ document.addEventListener("DOMContentLoaded", function () {
   printedProduct();
 });
 
-// buttonRight.addEventListener("click", moveRight);
+buttonRight.addEventListener("click", moveRight);
 // buttonLeft.addEventListener("clik", moveLeft);
 
-//printed first product by default
+//created elements to plce eah key of product
+const productV = document.createElement("h4");
+const productName = document.createElement("h1");
+const productPrice = document.createElement("p");
+const colorEssence = document.createElement("p");
+const colorDescription = document.createElement("p");
+const productImage = document.createElement("img");
+const productLink = document.createElement("a");
+
 function printedProduct() {
-  const productV = document.createElement("h4");
-  const productName = document.createElement("h1");
-  const productPrice = document.createElement("p");
-  const colorEssence = document.createElement("p");
-  const colorDescription = document.createElement("p");
-  const productImage = document.createElement("img");
-  const productLink = document.createElement("a");
-
   //should we add  event.preventDefault();????
-  for (let i = 0; i <= products.length - 1; ++i) {
-    const defaultProduct = products[i];
-    productV.textContent = `${defaultProduct.productVersion}`;
-    productName.textContent = `${defaultProduct.productName}`;
-    productPrice.textContent = `${defaultProduct.productPrice}`;
-    colorEssence.textContent = `${defaultProduct.colorEssence}`;
-    colorDescription.textContent = `${defaultProduct.colorDescription}`;
+  // for (let i = 0; i < products.length; ++i) {
+  //   const defaultProduct = products[3];
 
-    productImage.src = `${defaultProduct.shoppingLink}`;
-    productLink.textContent = "Shop now";
-    productLink.href = `${defaultProduct.image}`;
-  }
-  textOne.appendChild(productV, productName, productPrice);
-  textTwo.appendChild(colorEssence, colorDescription, productLink);
+  //   productV.textContent = `${defaultProduct.productVersion}`;
+  //   productName.textContent = `${defaultProduct.colorName}`;
+  //   productPrice.textContent = `${defaultProduct.price}`;
+  //   colorEssence.textContent = `${defaultProduct.colorReference}`;
+  //   colorDescription.textContent = `${defaultProduct.description}`;
+
+  //   productImage.src = `${defaultProduct.image}`;
+  //   productLink.textContent = "Shop now";
+  //   productLink.href = `${defaultProduct.shoppingLink}`;
+  // }
+  // textOne.appendChild(productV);
+  // textOne.appendChild(productName);
+  // textOne.appendChild(productPrice);
+  // textTwo.appendChild(colorEssence);
+  // textTwo.appendChild(colorDescription);
+  // textTwo.appendChild(productLink);
+  // divImage.appendChild(productImage);
+
+  const randomIndex = Math.floor(Math.random() * products.length + 1);
+  const randomProduct = products[randomIndex];
+
+  productV.textContent = `${randomProduct.productVersion}`;
+  productName.textContent = `${randomProduct.colorName}`;
+  productPrice.textContent = `${randomProduct.price}`;
+  colorEssence.textContent = `${randomProduct.colorReference}`;
+  colorDescription.textContent = `${randomProduct.description}`;
+
+  productImage.src = `${randomProduct.image}`;
+  productLink.textContent = "Shop now";
+  productLink.href = `${randomProduct.shoppingLink}`;
+
+  textOne.appendChild(productV);
+  textOne.appendChild(productName);
+  textOne.appendChild(productPrice);
+  textTwo.appendChild(colorEssence);
+  textTwo.appendChild(colorDescription);
+  textTwo.appendChild(productLink);
   divImage.appendChild(productImage);
 }
 
-// function moveRight() {
-//   //should we add  event.preventDefault();????
-//   // Get  index of the current displayed product
-//   const currentIndex = products.findIndex(
-//     (product) => product === displayedProduct
-//   );
-//   for (let i = 0; i <= products.length - 1; ++i) {
-//     for (let key of products[i]) {
-//       productType.appendChild(product[version]);
-//       productName.appendChild(product[colorName]);
-//       productPrice.appendChild(product[price]);
-//       colorEssence.appendChild(product[colorReference]);
-//       colorDescription.appendChild(product[description]);
-//       productLink.appendChild(product[shoppingLink]);
-//       productImage.appendChild(product[image]);
-//     }
-//     ++products[i];
-//   }
+// const removeProject = projects.find((e) => e.id === id);
+//   const index = projects.indexOf(removeProject);
 
-//   //pillar array i buscar la posició perquè la funció faci posició més més per cada click
-//   // a més, per cada click, cada element del array s'ha de posar en llocs diferents. per atanc he de fer appendchild (No es pot fer fora del array perquè l'he de recorrer?
-//   // a mes per cada click que s'dapati el color de la pantalla al color de iphone
-// }
+function moveRight(defaultProduct) {
+  // Get  index of the current displayed product
+  const findCurrentIndex = products.findIndex(
+    (product) => product === defaultProduct
+  );
+  //let index = products.indexOf(findCurrentIndex);
+  let nextIndex = findCurrentIndex + 1;
+  //const currentIndex = products.indexOf(findProduct);
+
+  // Check if the index is out of bounds, reset to 0
+  if (nextIndex <= products.length) {
+    nextIndex = 0;
+  }
+
+  const nextProduct = products[nextIndex];
+  console.log(nextProduct);
+  printedProduct(nextProduct);
+}
+
+//pillar array i buscar la posició perquè la funció faci posició més més per cada click
+// a més, per cada click, cada element del array s'ha de posar en llocs diferents. per atanc he de fer appendchild (No es pot fer fora del array perquè l'he de recorrer?
+// a mes per cada click que s'dapati el color de la pantalla al color de iphone
 
 // function moveLeft() {}
