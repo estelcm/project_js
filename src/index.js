@@ -72,10 +72,19 @@ buttonRight.addEventListener("click", moveRight);
 
 //created elements to plce eah key of product
 const productV = document.createElement("h4");
+productV.classList.add("uppercase", "font-montserrat", "text-lg");
+
 const productName = document.createElement("h1");
+productName.classList.add("font-garamond", "text-7xl", "font-bold", "my-6");
+
 const productPrice = document.createElement("p");
+productPrice.classList.add("font-garamond", "text-5xl", "font-bold");
+
 const colorEssence = document.createElement("p");
+colorEssence.classList.add("font-garamond", "text-3xl", "mb-2");
+
 const colorDescription = document.createElement("p");
+colorDescription.classList.add("font-monserrat", "font-extralight", "mb-4");
 const productImage = document.createElement("img");
 const productLink = document.createElement("a");
 
