@@ -25,7 +25,7 @@ const products = [
     description:
       "Blue likes to do things its own way and it doesn’t conform well to the wishes of others",
     shoppingLink: "#",
-    image: "./img/iphone_beach.webp",
+    image: "./img/iphone_beach3.png",
   },
   {
     productVersion: "iphone 14",
@@ -35,7 +35,7 @@ const products = [
     description:
       "A hypothetical force of nature that acts on dark matter to allow dark matter to interact with itself.",
     shoppingLink: "#",
-    image: "./img/iphone_dark_night.webp",
+    image: "./img/iphone_dark_night3.png",
   },
   {
     productVersion: "iphone 14",
