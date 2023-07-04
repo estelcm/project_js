@@ -16,7 +16,7 @@
       >
         <div>
           <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2em" class=" text-gray-700 fill-current" viewBox="0 0 384 512"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" /></svg>
                 
             </img>
           </a>
@@ -64,7 +64,7 @@
             </li>
             <li>
               <a
-                class="md:p-4 py-2 block hover:text-white text-slate-900 font-medium"
+                class="md:p-4 py-2 block hover:text-white  text-gray-700 font-medium"
                 href="#"
                 >Sign Up</a
               >
@@ -90,7 +90,7 @@
         <div class=" flex lg:flex-col mg:flex-row sm:flex-row mg:justify-center sm:justify-center lg:mt-10 mg:mt-4 sm:mt-4 mg:gap-8 sm:gap-8 ">
          
             
-            <button class="group relative h-12 w-12 overflow-hidden rounded-full bg-transparent text-lg shadow hover:bg-gray-300" id="buttonLeft">
+            <!-- <button class="group relative h-12 w-12 overflow-hidden rounded-full bg-transparent text-lg shadow hover:bg-gray-300" id="buttonLeft">
               <div class="absolute inset-0 w-3 bg-slate-600 transition-all duration-250 ease-out transform translate-x-full group-hover:translate-x-0"></div>
               <span class="relative bg-transparent group-hover:bg-white"></span>
               <i class="fa-solid fa-angle-left" style="color: #303030;"></i>
@@ -100,18 +100,38 @@
               <div class="absolute inset-0 w-3 bg-slate-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
               <span class="relative bg-transparent group-hover:bg-white"></span>
               <i class="fa-solid fa-angle-right text-gray-700 group-hover:text-white"></i>
-            </button>
-            
-            
-            
-            
-            
-            
-            
-                        
+            </button> -->
+
+            <!-- button left-->
+            <button class="group relative h-12 w-12 text-2xl border-black border-[1px] rounded-full text-slate-900 hover:shadow-[inset_13rem_0_0_0] hover:shadow-black duration-[400ms,700ms] transition-[color,box-shadow]" id="buttonLeft">
+              <i class="fa-solid fa-angle-left text-black group-hover:text-white"></i>
+          </button>
+
+<!-- button right-->
+          
+            <button class="group relative h-12 w-12 text-2xl border-black border-[1px] rounded-full text-slate-900 hover:shadow-[inset_13rem_0_0_0] hover:shadow-black duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white" id="buttonRight">
+              <i class="fa-solid fa-angle-right text-black group-hover:text-white"></i>
+          </button>
+         
+                     
         </div>
       </div>
     </div>
+    <!-- search option -->
+    
+<form class=" relative mt-7 w-1/2 mx-auto pt-11" id="formColor">   
+ 
+  <div class="relative mt-7 ">
+      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+          </svg>
+      </div>
+      <input type="search" id="inputSearch" class="block w-full p-4 pl-10 text-sm text-white border border-gray-300 shadow-black rounded-full bg-slate-950 focus:neutral-600  focus:border-neutral-700 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:bg-neutral-600 dark:focus:border-neutral-600 " placeholder="Search by colors..." required>
+      <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="buttonSearch">Search</button>
+  </div>
+</form>
+
     <script src="https://kit.fontawesome.com/59f48eec2c.js" crossorigin="anonymous"></script>
     <script src="index.js">
 

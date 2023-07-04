@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       montserrat: ["Montserrat", " sans-serif"],
-      garamond: ["EB Garamond", "serif", "italic"],
+      garamond: ["EB Garamond", "serif"],
     },
   },
   plugins: [],

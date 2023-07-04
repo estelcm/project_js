@@ -6,10 +6,15 @@ const divImage = document.getElementById("divImage");
 const buttonLeft = document.getElementById("buttonLeft");
 const buttonRight = document.getElementById("buttonRight");
 
+const inputSearch = document.getElementById("inputSearch");
+const buttonSearch = document.getElementById("buttonSearch");
+const formColor = document.getElementById("formColor");
+
 button.addEventListener("click", () => {
   menu.classList.toggle("hidden");
 });
 
+formColor.addEventListener("submit", searchByColor);
 const products = [
   {
     productVersion: "iphone 14",
@@ -68,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 buttonRight.addEventListener("click", moveRight);
-// buttonLeft.addEventListener("clik", moveLeft);
+buttonLeft.addEventListener("click", moveLeft);
 
 //created elements to plce eah key of product
 const productV = document.createElement("h4");
@@ -81,7 +86,7 @@ const productPrice = document.createElement("p");
 productPrice.classList.add("font-garamond", "text-7xl", "font-regular");
 
 const colorEssence = document.createElement("p");
-colorEssence.classList.add("font-garamond", "text-5xl", "mb-2");
+colorEssence.classList.add("font-garamond", "italic", "text-5xl", "mb-2");
 
 const colorDescription = document.createElement("p");
 colorDescription.classList.add(
@@ -137,8 +142,67 @@ function moveRight(defaultProduct) {
   printedProduct(nextProduct);
 }
 
-//pillar array i buscar la posició perquè la funció faci posició més més per cada click
-// a més, per cada click, cada element del array s'ha de posar en llocs diferents. per atanc he de fer appendchild (No es pot fer fora del array perquè l'he de recorrer?
-// a mes per cada click que s'dapati el color de la pantalla al color de iphone
+function moveLeft(defaultProduct) {
+  const findCurrentIndex = products.findIndex(
+    (product) => product === defaultProduct
+  );
+  //let index = products.indexOf(findCurrentIndex);
+  let nextIndex = findCurrentIndex - 1;
+  //const currentIndex = products.indexOf(findProduct);
 
-// function moveLeft() {}
+  // si passa del length tornar a posar a = perquè torni a començar
+  if (nextIndex < 0) {
+    nextIndex = 6;
+  }
+
+  const nextProduct = products[nextIndex];
+
+  printedProduct(nextProduct);
+}
+
+function searchByColor(products) {
+  const inputValue = inputSearch.value.toLowerCase();
+
+  if (isNaN(inputValue)) {
+    products.forEach((product) => {
+      if (
+        inputValue === colorName ||
+        inputValue === "red" ||
+        inputValue === "rojo" ||
+        inputValue === "vermell"
+      ) {
+        printedProduct(products[4]);
+      } else if (
+        inputValue === "azul" ||
+        inputValue === "blue" ||
+        inputValue === "blau"
+      ) {
+        printedProduct(products[0]);
+      } else if (
+        inputValue === "negro" ||
+        inputValue === "gris" ||
+        inputValue === "black" ||
+        inputValue === "negre"
+      ) {
+        printedProduct(products[1]);
+      } else if (
+        inputValue === "blanc" ||
+        inputValue === "perla" ||
+        inputValue === "white" ||
+        inputValue === "blanco"
+      ) {
+        printedProduct(products[2]);
+      } else if (
+        inputValue === "lila" ||
+        inputValue === "lavanda" ||
+        inputValue === "purple"
+      ) {
+        printedProduct(products[3]);
+      } else {
+        alert("We cannot recognize the color...");
+      }
+    });
+  } else {
+    alert("Invalid input");
+  }
+}
