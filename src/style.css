@@ -31,6 +31,27 @@ font-family: 'Playfair Display', serif;
   background-color: #ff9b9b; /* Green background color */
 }
 
+/* for button search*/
+#buttonSearch-0 {
+  background-color: #c5d8df; /* Red background color */
+}
+
+#buttonSearch-1 {
+  background-color: #fff7d7; /* Green background color */
+}
+
+#buttonSearch-2 {
+  background-color: #c7c7c7; /* Blue background color */
+}
+
+#buttonSearch-3 {
+  background-color: #e6d7ed; /* Red background color */
+}
+
+#buttonSearch-4 {
+  background-color: #ff9b9b; /* Green background color */
+}
+
 @media (min-width: 768px) {
   #marginBody {
     margin: 0px 50px 10px 50px;

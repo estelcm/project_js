@@ -15,6 +15,7 @@ button.addEventListener("click", () => {
 });
 
 formColor.addEventListener("submit", searchByColor);
+
 const products = [
   {
     productVersion: "iphone 14",
@@ -96,7 +97,7 @@ colorDescription.classList.add(
   "mb-4"
 );
 const productImage = document.createElement("img");
-const productLink = document.createElement("a");
+const productLink = document.createElement("button");
 
 function printedProduct() {
   const randomIndex = Math.floor(Math.random() * products.length);
@@ -121,6 +122,9 @@ function printedProduct() {
   divImage.appendChild(productImage);
 
   document.body.className = `body-color-${randomIndex}`;
+  productLink.addEventListener("click", function () {
+    shopNow(productLink);
+  });
 }
 
 function moveRight(defaultProduct) {
@@ -165,8 +169,10 @@ function searchByColor(products) {
 
   if (isNaN(inputValue)) {
     products.forEach((product) => {
+      if (inputValue === colorName) {
+        printedProduct(product);
+      }
       if (
-        inputValue === colorName ||
         inputValue === "red" ||
         inputValue === "rojo" ||
         inputValue === "vermell"
@@ -205,4 +211,11 @@ function searchByColor(products) {
   } else {
     alert("Invalid input");
   }
+  document.body.getElementsById = `buttonSearch-${randomIndex}`;
+}
+
+function shopNow(products) {
+  products.forEach((product) => {
+    alert(`${product.colorName} iphone has been added!`);
+  });
 }
