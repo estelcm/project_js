@@ -8,3 +8,37 @@ font-family: 'EB Garamond', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Playfair Display', serif;
 */
+#marginBody {
+  margin: 0px 20px 10px 20px;
+}
+.body-color-0 {
+  background-color: #c5d8df; /* Red background color */
+}
+
+.body-color-1 {
+  background-color: #fff7d7; /* Green background color */
+}
+
+.body-color-2 {
+  background-color: #c7c7c7; /* Blue background color */
+}
+
+.body-color-3 {
+  background-color: #e6d7ed; /* Red background color */
+}
+
+.body-color-4 {
+  background-color: #ff9b9b; /* Green background color */
+}
+
+@media (min-width: 768px) {
+  #marginBody {
+    margin: 0px 50px 10px 50px;
+  }
+}
+
+@media (min-width: 1251px) {
+  #marginBody {
+    margin: 0px 50px 10px 50px;
+  }
+}

@@ -23,7 +23,7 @@ const products = [
   },
   {
     productVersion: "iphone 14",
-    colorName: "Dark night",
+    colorName: "Night",
     price: "€ 1.011",
     colorReference: "The best light to watch the sky's brightest meteo shower",
     description:
@@ -59,7 +59,7 @@ const products = [
     description:
       " A warm orange shade that looks like a burning flame. It represents enthusiasm, energy. Exudes confidence and determination",
     shoppingLink: "#",
-    image: "./img/iphone_purple.webp",
+    image: "./img/iphone_red.webp",
   },
 ];
 
@@ -75,43 +75,26 @@ const productV = document.createElement("h4");
 productV.classList.add("uppercase", "font-montserrat", "text-lg");
 
 const productName = document.createElement("h1");
-productName.classList.add("font-garamond", "text-7xl", "font-bold", "my-6");
+productName.classList.add("font-garamond", "text-9xl", "font-bold", "my-6");
 
 const productPrice = document.createElement("p");
-productPrice.classList.add("font-garamond", "text-5xl", "font-bold");
+productPrice.classList.add("font-garamond", "text-7xl", "font-regular");
 
 const colorEssence = document.createElement("p");
-colorEssence.classList.add("font-garamond", "text-3xl", "mb-2");
+colorEssence.classList.add("font-garamond", "text-5xl", "mb-2");
 
 const colorDescription = document.createElement("p");
-colorDescription.classList.add("font-monserrat", "font-extralight", "mb-4");
+colorDescription.classList.add(
+  "font-monserrat",
+  "text-lg",
+  "font-extralight",
+  "mb-4"
+);
 const productImage = document.createElement("img");
 const productLink = document.createElement("a");
 
 function printedProduct() {
-  //should we add  event.preventDefault();????
-  // for (let i = 0; i < products.length; ++i) {
-  //   const defaultProduct = products[3];
-
-  //   productV.textContent = `${defaultProduct.productVersion}`;
-  //   productName.textContent = `${defaultProduct.colorName}`;
-  //   productPrice.textContent = `${defaultProduct.price}`;
-  //   colorEssence.textContent = `${defaultProduct.colorReference}`;
-  //   colorDescription.textContent = `${defaultProduct.description}`;
-
-  //   productImage.src = `${defaultProduct.image}`;
-  //   productLink.textContent = "Shop now";
-  //   productLink.href = `${defaultProduct.shoppingLink}`;
-  // }
-  // textOne.appendChild(productV);
-  // textOne.appendChild(productName);
-  // textOne.appendChild(productPrice);
-  // textTwo.appendChild(colorEssence);
-  // textTwo.appendChild(colorDescription);
-  // textTwo.appendChild(productLink);
-  // divImage.appendChild(productImage);
-
-  const randomIndex = Math.floor(Math.random() * products.length + 1);
+  const randomIndex = Math.floor(Math.random() * products.length);
   const randomProduct = products[randomIndex];
 
   productV.textContent = `${randomProduct.productVersion}`;
@@ -131,10 +114,9 @@ function printedProduct() {
   textTwo.appendChild(colorDescription);
   textTwo.appendChild(productLink);
   divImage.appendChild(productImage);
-}
 
-// const removeProject = projects.find((e) => e.id === id);
-//   const index = projects.indexOf(removeProject);
+  document.body.className = `body-color-${randomIndex}`;
+}
 
 function moveRight(defaultProduct) {
   // Get  index of the current displayed product
@@ -145,7 +127,7 @@ function moveRight(defaultProduct) {
   let nextIndex = findCurrentIndex + 1;
   //const currentIndex = products.indexOf(findProduct);
 
-  // Check if the index is out of bounds, reset to 0
+  // si passa del length tornar a posar a = perquè torni a començar
   if (nextIndex <= products.length) {
     nextIndex = 0;
   }
