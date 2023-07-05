@@ -45,7 +45,7 @@ const products = [
     description:
       "White signifies the ability to stay calm and balanced, even in the midst of conflict. ",
     shoppingLink: "#",
-    image: "./img/iphone_pearl.webp",
+    image: "./img/iphone_pearl3.png",
   },
   {
     productVersion: "iphone 14",
@@ -65,7 +65,7 @@ const products = [
     description:
       " A warm orange shade that looks like a burning flame. It represents enthusiasm, energy. Exudes confidence and determination",
     shoppingLink: "#",
-    image: "./img/iphone_red.webp",
+    image: "./img/iphone_scarlet3.png",
   },
 ];
 
@@ -98,10 +98,11 @@ colorDescription.classList.add(
 );
 const productImage = document.createElement("img");
 const productLink = document.createElement("button");
-
+let currentProduct;
 function printedProduct() {
   const randomIndex = Math.floor(Math.random() * products.length);
   const randomProduct = products[randomIndex];
+  currentProduct = randomProduct;
 
   productV.textContent = `${randomProduct.productVersion}`;
   productName.textContent = `${randomProduct.colorName}`;
@@ -164,12 +165,12 @@ function moveLeft(defaultProduct) {
   printedProduct(nextProduct);
 }
 
-function searchByColor(products) {
+function searchByColor() {
   const inputValue = inputSearch.value.toLowerCase();
 
   if (isNaN(inputValue)) {
-    products.forEach((product) => {
-      if (inputValue === colorName) {
+    products.filter((product) => {
+      if (inputValue === product.colorName) {
         printedProduct(product);
       }
       if (
@@ -177,12 +178,14 @@ function searchByColor(products) {
         inputValue === "rojo" ||
         inputValue === "vermell"
       ) {
+        console.log(products[4]);
         printedProduct(products[4]);
       } else if (
         inputValue === "azul" ||
         inputValue === "blue" ||
         inputValue === "blau"
       ) {
+        console.log(products[0]);
         printedProduct(products[0]);
       } else if (
         inputValue === "negro" ||
@@ -190,6 +193,7 @@ function searchByColor(products) {
         inputValue === "black" ||
         inputValue === "negre"
       ) {
+        console.log(products[1]);
         printedProduct(products[1]);
       } else if (
         inputValue === "blanc" ||
@@ -197,12 +201,14 @@ function searchByColor(products) {
         inputValue === "white" ||
         inputValue === "blanco"
       ) {
+        console.log(products[2]);
         printedProduct(products[2]);
       } else if (
         inputValue === "lila" ||
         inputValue === "lavanda" ||
         inputValue === "purple"
       ) {
+        console.log(products[3]);
         printedProduct(products[3]);
       } else {
         alert("We cannot recognize the color...");
@@ -211,11 +217,12 @@ function searchByColor(products) {
   } else {
     alert("Invalid input");
   }
-  document.body.getElementsById = `buttonSearch-${randomIndex}`;
+
+  //document.body.getElementsById = `buttonSearch-${randomIndex}`;
 }
 
-function shopNow(products) {
-  products.forEach((product) => {
-    alert(`${product.colorName} iphone has been added!`);
-  });
+function shopNow() {
+  console.log(currentProduct);
+
+  alert(`${currentProduct.colorName} iphone has been added!`);
 }
