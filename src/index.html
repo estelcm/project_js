@@ -75,41 +75,31 @@
     <hr class="px-10 border-t border-slate-600 border-solid border-1">
     </header>
 <!-------------initial page starts here------------------>
-    <div class="flex lg:flex-row  md:flex-col-reverse sm:flex-col-reverse lg:justify-between md:justify-normal sm:justify-normalpx-4 mt-20" >
+    <div class="flex lg:flex-row  md:flex-col-reverse flex-col-reverse lg:justify-
+    stretch md:justify-between justify-between px-4 mt-10" >
         <!-- text -->
       <div
-        class="flex flex-col justify-between lg:w-3/12 md:w-screen sg:w-screen  text-slate-900 " id="divTextLeft">
+        class="flex flex-col justify-between lg:w-5/12 md:w-screen sg:w-screen  text-slate-900 " id="divTextLeft">
         <div id="textOne" ></div>
-        <div id="textTwo"></div>
+        <div id="textTwo" class="lg:pb-10 md:pb-2 pb-2"></div>
 
       </div>
       <!-- image and buttons -->
-      <div class="flex lg:flex-row md:flex-col sm:flex-col sm:justify-center lg:justify-between md:justify-center"id="divImageandButton">
+      <div class="flex lg:flex-row md:flex-col flex-col justify-center lg:justify-between md:justify-center"id="divImageandButton">
         <div id="divImage"></div>
         <!--buttons-->
-        <div class=" flex lg:flex-col mg:flex-row sm:flex-row mg:justify-center sm:justify-center lg:mt-10 mg:mt-4 sm:mt-4 mg:gap-8 sm:gap-8 ">
+        <div class=" flex lg:flex-col md:flex-row flex-row md:justify-center justify-center lg:mt-10 md:mt-4 mt-4 md:gap-8 gap-8 lg:pl-10 lg:ml-28 mb-6 lg:mb-0 md:mb-6">
          
-            
-            <!-- <button class="group relative h-12 w-12 overflow-hidden rounded-full bg-transparent text-lg shadow hover:bg-gray-300" id="buttonLeft">
-              <div class="absolute inset-0 w-3 bg-slate-600 transition-all duration-250 ease-out transform translate-x-full group-hover:translate-x-0"></div>
-              <span class="relative bg-transparent group-hover:bg-white"></span>
-              <i class="fa-solid fa-angle-left" style="color: #303030;"></i>
-            </button>
-
-            <button class="group relative h-12 w-12 overflow-hidden rounded-full bg-transparent text-lg shadow hover:bg-gray-300" id="buttonRight">
-              <div class="absolute inset-0 w-3 bg-slate-600 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
-              <span class="relative bg-transparent group-hover:bg-white"></span>
-              <i class="fa-solid fa-angle-right text-gray-700 group-hover:text-white"></i>
-            </button> -->
+       
 
             <!-- button left-->
-            <button class="group relative h-12 w-12 text-2xl border-black border-[1px] rounded-full text-slate-900 hover:shadow-[inset_13rem_0_0_0] hover:shadow-black duration-[400ms,700ms] transition-[color,box-shadow]" id="buttonLeft">
+            <button class="group relative h-12 w-12 text-2xl border-black border-[1px] rounded-full text-slate-900 hover:shadow-[inset_13rem_0_0_0] hover:shadow-black duration-[700ms,1000ms] transition-[color,box-shadow]" id="buttonLeft">
               <i class="fa-solid fa-angle-left text-black group-hover:text-white"></i>
           </button>
 
 <!-- button right-->
           
-            <button class="group relative h-12 w-12 text-2xl border-black border-[1px] rounded-full text-slate-900 hover:shadow-[inset_13rem_0_0_0] hover:shadow-black duration-[400ms,700ms] transition-[color,box-shadow] hover:text-white" id="buttonRight">
+            <button class="group relative h-12 w-12 text-2xl border-black border-[1px] rounded-full text-slate-900 hover:shadow-[inset_13rem_0_0_0] hover:shadow-black duration-[700ms,1000ms] transition-[color,box-shadow] hover:text-white" id="buttonRight">
               <i class="fa-solid fa-angle-right text-black group-hover:text-white"></i>
           </button>
          
@@ -119,7 +109,7 @@
     </div>
     <!-- search option -->
     
-<form class=" relative mt-7 w-1/2 mx-auto pt-11" id="formColor">   
+<form class=" relative mt-7 lg:w-1/2 md:w-1/2 w-4/5 mx-auto lg:pt-11 md:pt-5 " id="formColor">   
  
   <div class="relative mt-7 ">
       <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -130,7 +120,7 @@
       <input type="search" id="inputSearch" class="block w-full p-4 pl-10 text-sm text-white border border-gray-300 shadow-black rounded-full bg-slate-950 focus:neutral-600  focus:border-neutral-700 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:bg-neutral-600 dark:focus:border-neutral-600 " placeholder="Search by colors..." required>
       <button type="submit" class="text-white absolute right-2.5 bottom-2.5 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2" id="buttonSearch" class="buttonBgSearch">Search</button>
       
-      <!-- <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" id="buttonSearch" class="buttonBgSearch">Search</button> -->
+      
   </div>
 </form>
 

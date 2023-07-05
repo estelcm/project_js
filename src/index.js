@@ -55,7 +55,7 @@ const products = [
     description:
       " It effortlessly blends warm and cool elements to create a stunning hue that turns heads. With its subtle sophistication and vibrant energy, lavender reels in passersby.",
     shoppingLink: "#",
-    image: "./img/iphone_purple.webp",
+    image: "./img/iphone_lavender3.png",
   },
   {
     productVersion: "iphone 14",
@@ -69,14 +69,12 @@ const products = [
   },
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
-  printedProduct();
-});
+document.addEventListener("DOMContentLoaded", printedProduct);
 
 buttonRight.addEventListener("click", moveRight);
 buttonLeft.addEventListener("click", moveLeft);
 
-//created elements to plce eah key of product
+//created elements to palce each key of product
 const productV = document.createElement("h4");
 productV.classList.add("uppercase", "font-montserrat", "text-lg");
 
@@ -84,7 +82,12 @@ const productName = document.createElement("h1");
 productName.classList.add("font-garamond", "text-9xl", "font-bold", "my-6");
 
 const productPrice = document.createElement("p");
-productPrice.classList.add("font-garamond", "text-7xl", "font-regular");
+productPrice.classList.add(
+  "font-garamond",
+  "italic",
+  "text-7xl",
+  "font-regular"
+);
 
 const colorEssence = document.createElement("p");
 colorEssence.classList.add("font-garamond", "italic", "text-5xl", "mb-2");
@@ -97,7 +100,17 @@ colorDescription.classList.add(
   "mb-4"
 );
 const productImage = document.createElement("img");
+productImage.classList.add(
+  "mr-0",
+  "md:mr-0",
+  "lg:mr-32",
+  "lg:w-full",
+  "md:w-full",
+  "w-screen"
+);
 const productLink = document.createElement("button");
+productLink.classList.add("underline", "underline-offset-8", "tracking-wide");
+
 let currentProduct;
 function printedProduct() {
   const randomIndex = Math.floor(Math.random() * products.length);
@@ -166,63 +179,65 @@ function moveLeft(defaultProduct) {
 }
 
 function searchByColor() {
-  const inputValue = inputSearch.value.toLowerCase();
+  let inputValue = `${inputSearch.value}`;
 
-  if (isNaN(inputValue)) {
-    products.filter((product) => {
-      if (inputValue === product.colorName) {
-        printedProduct(product);
-      }
-      if (
-        inputValue === "red" ||
-        inputValue === "rojo" ||
-        inputValue === "vermell"
-      ) {
-        console.log(products[4]);
-        printedProduct(products[4]);
-      } else if (
-        inputValue === "azul" ||
-        inputValue === "blue" ||
-        inputValue === "blau"
-      ) {
-        console.log(products[0]);
-        printedProduct(products[0]);
-      } else if (
-        inputValue === "negro" ||
-        inputValue === "gris" ||
-        inputValue === "black" ||
-        inputValue === "negre"
-      ) {
-        console.log(products[1]);
-        printedProduct(products[1]);
-      } else if (
-        inputValue === "blanc" ||
-        inputValue === "perla" ||
-        inputValue === "white" ||
-        inputValue === "blanco"
-      ) {
-        console.log(products[2]);
-        printedProduct(products[2]);
-      } else if (
-        inputValue === "lila" ||
-        inputValue === "lavanda" ||
-        inputValue === "purple"
-      ) {
-        console.log(products[3]);
-        printedProduct(products[3]);
-      } else {
-        alert("We cannot recognize the color...");
-      }
-    });
-  } else {
-    alert("Invalid input");
+  for (let i = 0; i < products.length; i++) {
+    console.log("console inputvalue", inputValue);
+    console.log("console array en posicion y name", products[i].colorName);
+    //console.log(Boolean(products[i].colorName) == inputValue);
+    if (inputValue === products[i].colorName.toLowerCase()) {
+      console.log("console en posicion i", products[2]);
+    } else {
+      alert("We cannot recognize the color...");
+    }
+
+    // if (
+    //   inputValue === "red" ||
+    //   inputValue === "rojo" ||
+    //   inputValue === "vermell"
+    // ) {
+    //   console.log(products[4]);
+    //   printedProduct(products[4]);
+    // } else if (
+    //   inputValue === "azul" ||
+    //   inputValue === "blue" ||
+    //   inputValue === "blau"
+    // ) {
+    //   console.log(products[0]);
+    //   printedProduct(products[0]);
+    // } else if (
+    //   inputValue === "negro" ||
+    //   inputValue === "gris" ||
+    //   inputValue === "black" ||
+    //   inputValue === "negre"
+    // ) {
+    //   console.log(products[1]);
+    //   printedProduct(products[1]);
+    // } else if (
+    //   inputValue === "blanc" ||
+    //   inputValue === "perla" ||
+    //   inputValue === "white" ||
+    //   inputValue === "blanco"
+    // ) {
+    //   console.log(products[2]);
+    //   printedProduct(products[2]);
+    // } else if (
+    //   inputValue === "lila" ||
+    //   inputValue === "lavanda" ||
+    //   inputValue === "purple"
+    // ) {
+    //   console.log(products[3]);
+    //   printedProduct(products[3]);
+    // } else {
+    //   alert("We cannot recognize the color...");
+    // }
+
+    inputValue = "";
+
+    //document.body.getElementsById = `buttonSearch-${randomIndex}`;
   }
-
-  //document.body.getElementsById = `buttonSearch-${randomIndex}`;
 }
 
 function shopNow() {
-  console.log(currentProduct);
-
   alert(`${currentProduct.colorName} iphone has been added!`);
 }
