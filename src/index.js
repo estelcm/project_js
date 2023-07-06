@@ -239,5 +239,6 @@ function searchByColor() {
 }
 
 function shopNow() {
+  //reconeixer en quin producte esta en la posició
   alert(`${currentProduct.colorName} iphone has been added!`);
 }

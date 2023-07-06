@@ -1,8 +1,10 @@
-# project_js
+# Hi! #
 
-## Colarity
+
+## Colarity Project
+
 It's a project to practice JavaScript HTML DOM.
-Almost all the styling is made using Tailwind.
+
 
 HTML, CSS, Tailwind and JavaScript
 
@@ -12,10 +14,24 @@ HTML, CSS, Tailwind and JavaScript
 
 
 
+![Alt text](src/img/colarity.png)
+
+
+
+## Author
+- [@estelcm](https://github.com/estelcm)
 
 
 
 
+
+## 🔗 Links
+
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/estel-cunill-25809411a)
 
 
 Inspired from 'Product Showcase UI' : @TurkAysenur
+
+
+
+
