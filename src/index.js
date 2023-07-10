@@ -111,6 +111,10 @@ productImage.classList.add(
 const productLink = document.createElement("button");
 productLink.classList.add("underline", "underline-offset-8", "tracking-wide");
 
+productLink.addEventListener("click", function () {
+  shopNow(productLink);
+});
+
 let currentProduct;
 function printedProduct() {
   const randomIndex = Math.floor(Math.random() * products.length);
@@ -136,15 +140,12 @@ function printedProduct() {
   divImage.appendChild(productImage);
 
   document.body.className = `body-color-${randomIndex}`;
-  productLink.addEventListener("click", function () {
-    shopNow(productLink);
-  });
 }
 
-function moveRight(defaultProduct) {
+function moveRight(currentProduct) {
   // Get  index of the current displayed product
   const findCurrentIndex = products.findIndex(
-    (product) => product === defaultProduct
+    (product) => product === currentProduct
   );
   //let index = products.indexOf(findCurrentIndex);
   let nextIndex = findCurrentIndex + 1;
@@ -160,9 +161,9 @@ function moveRight(defaultProduct) {
   printedProduct(nextProduct);
 }
 
-function moveLeft(defaultProduct) {
+function moveLeft(currentProduct) {
   const findCurrentIndex = products.findIndex(
-    (product) => product === defaultProduct
+    (product) => product === currentProduct
   );
   //let index = products.indexOf(findCurrentIndex);
   let nextIndex = findCurrentIndex - 1;
@@ -240,5 +241,6 @@ function searchByColor() {
 
 function shopNow() {
   //reconeixer en quin producte esta en la posició
+
   alert(`${currentProduct.colorName} iphone has been added!`);
 }
