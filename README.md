@@ -8,7 +8,7 @@ It's a project to practice JavaScript HTML DOM.
 
 HTML, CSS, Tailwind and JavaScript
 
-
+See my work [colarity](https://main--luxury-dango-98351d.netlify.app/src/)
 
 
 
