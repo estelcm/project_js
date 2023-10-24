@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", printedProduct);
 buttonRight.addEventListener("click", moveRight);
 buttonLeft.addEventListener("click", moveLeft);
 
+buttonSearch.addEventListener("submit", searchByColor);
+
 //created elements to palce each key of product
 const productV = document.createElement("h4");
 productV.classList.add("uppercase", "font-montserrat", "text-lg");
@@ -117,9 +119,11 @@ productLink.addEventListener("click", function () {
 
 let currentProduct;
 function printedProduct() {
+  //if (!currentProduct) {
   const randomIndex = Math.floor(Math.random() * products.length);
   const randomProduct = products[randomIndex];
   currentProduct = randomProduct;
+  //}
 
   productV.textContent = `${randomProduct.productVersion}`;
   productName.textContent = `${randomProduct.colorName}`;
@@ -142,100 +146,134 @@ function printedProduct() {
   document.body.className = `body-color-${randomIndex}`;
 }
 
-function moveRight(currentProduct) {
-  // Get  index of the current displayed product
-  const findCurrentIndex = products.findIndex(
+// function moveRight(currentProduct) {
+//   // Get  index of the current displayed product
+//   const findCurrentIndex = products.findIndex(
+//     (product) => product === currentProduct
+//   );
+//   //let index = products.indexOf(findCurrentIndex);
+//   let nextIndex = findCurrentIndex + 1;
+//   //const currentIndex = products.indexOf(findProduct);
+
+//   // si passa del length tornar a posar a = perquè torni a començar
+//   if (nextIndex <= products.length) {
+//     nextIndex = 0;
+//   }
+
+//   const nextProduct = products[nextIndex];
+//   console.log(nextProduct);
+//   printedProduct(nextProduct);
+// }
+
+// function moveLeft() {
+//   const findCurrentIndex = products.findIndex(
+//     (product) => product === currentProduct
+//   );
+//   //let index = products.indexOf(findCurrentIndex);
+//   let nextIndex = findCurrentIndex - 1;
+//   //const currentIndex = products.indexOf(findProduct);
+
+//   // si passa del length tornar a posar a = perquè torni a començar
+//   if (nextIndex < 0) {
+//     nextIndex = 6;
+//   }
+
+//   const nextProduct = products[nextIndex];
+
+//   printedProduct(nextProduct);
+// }
+function moveRight() {
+  const currentIndex = products.findIndex(
     (product) => product === currentProduct
   );
-  //let index = products.indexOf(findCurrentIndex);
-  let nextIndex = findCurrentIndex + 1;
-  //const currentIndex = products.indexOf(findProduct);
-
-  // si passa del length tornar a posar a = perquè torni a començar
-  if (nextIndex <= products.length) {
-    nextIndex = 0;
-  }
-
-  const nextProduct = products[nextIndex];
-  console.log(nextProduct);
-  printedProduct(nextProduct);
+  const nextIndex = (currentIndex + 1) % products.length;
+  currentProduct = products[nextIndex];
+  printedProduct();
 }
 
-function moveLeft(currentProduct) {
-  const findCurrentIndex = products.findIndex(
+function moveLeft() {
+  const currentIndex = products.findIndex(
     (product) => product === currentProduct
   );
-  //let index = products.indexOf(findCurrentIndex);
-  let nextIndex = findCurrentIndex - 1;
-  //const currentIndex = products.indexOf(findProduct);
-
-  // si passa del length tornar a posar a = perquè torni a començar
-  if (nextIndex < 0) {
-    nextIndex = 6;
-  }
-
-  const nextProduct = products[nextIndex];
-
-  printedProduct(nextProduct);
+  const previousIndex = (currentIndex - 1 + products.length) % products.length;
+  currentProduct = products[previousIndex];
+  printedProduct();
 }
 
-function searchByColor() {
-  let inputValue = `${inputSearch.value}`;
+// function searchByColor() {
+//   let inputValue = `${inputSearch.value}`;
 
-  for (let i = 0; i < products.length; i++) {
-    console.log("console inputvalue", inputValue);
-    console.log("console array en posicion y name", products[i].colorName);
-    //console.log(Boolean(products[i].colorName) == inputValue);
-    if (inputValue === products[i].colorName.toLowerCase()) {
-      console.log("console en posicion i", products[2]);
-    } else {
-      alert("We cannot recognize the color...");
-    }
+//   for (let i = 0; i < products.length; i++) {
+//     console.log("console inputvalue", inputValue);
+//     console.log("console array en posicion y name", products[i].colorName);
+//     //console.log(Boolean(products[i].colorName) == inputValue);
+//     if (inputValue === products[i].colorName.toLowerCase()) {
+//       console.log("console en posicion i", products[2]);
 
-    // if (
-    //   inputValue === "red" ||
-    //   inputValue === "rojo" ||
-    //   inputValue === "vermell"
-    // ) {
-    //   console.log(products[4]);
-    //   printedProduct(products[4]);
-    // } else if (
-    //   inputValue === "azul" ||
-    //   inputValue === "blue" ||
-    //   inputValue === "blau"
-    // ) {
-    //   console.log(products[0]);
-    //   printedProduct(products[0]);
-    // } else if (
-    //   inputValue === "negro" ||
-    //   inputValue === "gris" ||
-    //   inputValue === "black" ||
-    //   inputValue === "negre"
-    // ) {
-    //   console.log(products[1]);
-    //   printedProduct(products[1]);
-    // } else if (
-    //   inputValue === "blanc" ||
-    //   inputValue === "perla" ||
-    //   inputValue === "white" ||
-    //   inputValue === "blanco"
-    // ) {
-    //   console.log(products[2]);
-    //   printedProduct(products[2]);
-    // } else if (
-    //   inputValue === "lila" ||
-    //   inputValue === "lavanda" ||
-    //   inputValue === "purple"
-    // ) {
-    //   console.log(products[3]);
-    //   printedProduct(products[3]);
-    // } else {
-    //   alert("We cannot recognize the color...");
-    // }
+//     } else {
+//       alert("We cannot recognize the color...");
+//     }
 
-    inputValue = "";
+//     // if (
+//     //   inputValue === "red" ||
+//     //   inputValue === "rojo" ||
+//     //   inputValue === "vermell"
+//     // ) {
+//     //   console.log(products[4]);
+//     //   printedProduct(products[4]);
+//     // } else if (
+//     //   inputValue === "azul" ||
+//     //   inputValue === "blue" ||
+//     //   inputValue === "blau"
+//     // ) {
+//     //   console.log(products[0]);
+//     //   printedProduct(products[0]);
+//     // } else if (
+//     //   inputValue === "negro" ||
+//     //   inputValue === "gris" ||
+//     //   inputValue === "black" ||
+//     //   inputValue === "negre"
+//     // ) {
+//     //   console.log(products[1]);
+//     //   printedProduct(products[1]);
+//     // } else if (
+//     //   inputValue === "blanc" ||
+//     //   inputValue === "perla" ||
+//     //   inputValue === "white" ||
+//     //   inputValue === "blanco"
+//     // ) {
+//     //   console.log(products[2]);
+//     //   printedProduct(products[2]);
+//     // } else if (
+//     //   inputValue === "lila" ||
+//     //   inputValue === "lavanda" ||
+//     //   inputValue === "purple"
+//     // ) {
+//     //   console.log(products[3]);
+//     //   printedProduct(products[3]);
+//     // } else {
+//     //   alert("We cannot recognize the color...");
+//     // }
 
-    //document.body.getElementsById = `buttonSearch-${randomIndex}`;
+//     inputValue = "";
+
+//     //document.body.getElementsById = `buttonSearch-${randomIndex}`;
+//   }
+// }
+
+function searchByColor(event) {
+  event.preventDefault();
+
+  const inputValue = inputSearch.value.toLowerCase();
+  const foundProduct = products.find(
+    (product) => product.colorName.toLowerCase() === inputValue
+  );
+
+  if (foundProduct) {
+    currentProduct = foundProduct;
+    printedProduct(currentProduct);
+  } else {
+    alert("No se pudo encontrar un producto con ese color.");
   }
 }
 
