@@ -17,8 +17,6 @@ Have a look at --> [colarity](https://colarity.netlify.app/src/)
 ![Alt text](src/img/colarity.png)
 
 
-
-## Author
 - [@estelcm](https://github.com/estelcm)
 
 
@@ -30,7 +28,7 @@ Have a look at --> [colarity](https://colarity.netlify.app/src/)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](www.linkedin.com/in/estel-cunill-25809411a)
 
 
-Inspired from 'Product Showcase UI' : @TurkAysenur
+This project is a replica(ish) and inspired from 'Product Showcase UI' : @TurkAysenur
 
 
 
