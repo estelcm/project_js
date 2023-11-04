@@ -6,7 +6,7 @@
 It's a project to practice JavaScript HTML DOM.
 
 
-HTML, CSS, Tailwind and JavaScript
+HTML | CSS | Tailwind | JavaScript | DOM | Node.js
 
 Have a look at --> [colarity](https://colarity.netlify.app/src/)
 
