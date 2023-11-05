@@ -11,10 +11,7 @@ HTML | CSS | Tailwind | JavaScript | DOM | Node.js
 Have a look at --> [colarity](https://colarity.netlify.app/src/)
 
 
-
-
-https://github.com/estelcm/project_js/assets/118080271/98ed1c43-802c-4606-ba49-033173203349
-
+https://github.com/estelcm/project_js/assets/118080271/645545ae-9faf-49f5-9dc4-983fbf02b932
 
 
 
